@@ -51,14 +51,13 @@ class minHeap {
 
     // method (2)
     // ------- --
-    heapify_Down() {
-        let index = 0;
+    heapify_Down(index = 0) {
 
         while (this.leftIndex(index) < this.heap.length) {
             let leftChild = this.leftIndex(index);
             let rightChild = this.rightIndex(index);
 
-            if (rightChild < this.heap.length && this.heap[rightChild] < this.heap[leftChild]) {                
+            if (rightChild < this.heap.length && this.heap[rightChild] < this.heap[leftChild]) {
                 leftChild = rightChild;
             }
 
@@ -69,6 +68,18 @@ class minHeap {
                 break;
             }
         }
+    }
+
+
+    // Build Heap from Unsortd Array
+
+    build(arr) {
+        this.heap = arr;
+
+        for (let i = Math.floor(this.heap.length / 2); i >= 0; i--) {
+            this.heapify_Down(i)
+        }
+        return this.heap
     }
 }
 
@@ -86,7 +97,11 @@ console.log(min.heap);
 
 // ---------- > 
 
-console.log("Removed :",min.removeRoot());
+console.log("Removed :", min.removeRoot());
+console.log(min.heap);
+
+// ---------- > 
+console.log("Build :", min.build([100,15,20,30,40]));
 console.log(min.heap);
 
 // ---------- > 
