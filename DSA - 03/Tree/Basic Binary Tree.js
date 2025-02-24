@@ -49,6 +49,7 @@ class Tree {
 
         return Math.min(node.val, left, right)
     }
+    
 }
 
 

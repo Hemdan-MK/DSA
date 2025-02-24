@@ -611,14 +611,6 @@ function mergeSortedLL(l1, l2) {
 // ===========================================================
 
 
-//Sort LL in Deescending
-
-
-
-
-
-
-
 const list = new LL();
 // const list2 = new LL();
 

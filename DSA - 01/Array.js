@@ -1,17 +1,17 @@
-// Adding & Removing Elements to the Array
+// Adding Elements to the Array
 
 // let arr = new Array(1,2,3,4,5)
 // console.log(arr);
 
 
 
-// Adding & Removing Elements to the Array
+// Removing Elements to the Array
 
 // let arr =  [ 1,2,3,4,5 ]
-// arr.push('last') 
-// arr.unshift('first') 
-// arr.shift() 
-// arr.pop() 
+// arr.push('last')
+// arr.unshift('first')
+// arr.shift()
+// arr.pop()
 // console.log(arr);
 
 
@@ -41,16 +41,13 @@
 
 
 // Second Largest Element in an Array
-// (1)
+
 // let arr = [12, 35, 1, 10, 34, 35, 1];
 // let arr2 = arr.sort((a, b) => a - b)
 // let set = new Set(arr2)
 // let res = [...set];
 // console.log(res[res.length-2]);
 
-// (2)
-// let arr = [12, 35, 1, 10, 34, 35, 1];
-// let max = -1, sec = -1
 
 
 
@@ -94,6 +91,7 @@
 //         console.log("empty");
 //         return
 //     }
+
 //     let set = new Set(array);
 //     let desc = [...set].sort((a, b) => b - a);
 //     console.log(desc[1]);
@@ -205,5 +203,46 @@
 // },0)
 // console.log(res);
 
+
+////////////////////////////////////////////////////
+
+
+// Splicing (Adding/Removing Elements at Any Position)
+
+// let arr = [1, 2, 3, 4, 5];
+// arr.splice(2, 1, "new");
+// console.log(arr); // [1, 2, "new", 4, 5]
+
+////////////////////////////////////////////////////
+
+// Slicing (Extracting a Portion of an Array)
+
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.slice(1, 4));
+
+////////////////////////////////////////////////////
+
+// Finding Elements (Using find, findIndex, and filter)
+
+// let arr = [10, 20, 30, 40];
+// console.log(arr.find((num) => num > 25)); // 30
+// console.log(arr.findIndex((num) => num > 25)); // 2
+// console.log(arr.filter((num) => num > 15)); // [20, 30, 40]
+
+////////////////////////////////////////////////////
+
+//Checking Conditions (Using some and every)
+
+// let arr = [1, 2, 3, 4];
+// console.log(arr.some((num) => num > 3)); // true 
+// console.log(arr.every((num) => num > 0)); // true 
+
+////////////////////////////////////////////////////
+
+// Reduce Function (Accumulating Values)
+
+// let arr = [1, 2, 3, 4];
+// let sum = arr.reduce((acc, val) => acc + val, 0);
+// console.log(sum); // 10
 
 ////////////////////////////////////////////////////

@@ -70,15 +70,20 @@ class Graphs {
 
 
 let g = new Graphs();
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
 g.addEdges("A", "B");
 g.addEdges("A", "C");
 g.addEdges("B", "D");
 g.addEdges("B", "E");
 g.addEdges("C", "F");
+console.log(g.adj);
+
 
 console.log("---------------- > ");
 console.log(g.BFS("A")); // Output: [ 'A', 'B', 'C', 'D', 'E', 'F' ]
 console.log("---------------- > ");
-console.log(g.DFS("A")); // Output: [ 'A', 'B', 'D', 'E', 'C', 'F' ]
+console.log(g.DFS("A")); // Output: [ 'A', 'C', 'F', 'B', 'E', 'D' ]
 console.log("---------------- > ");
 

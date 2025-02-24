@@ -1,6 +1,5 @@
 
 
-
 class Node {
     constructor(val) {
         this.val = val;
@@ -88,6 +87,7 @@ class BST {
         this.inOrderTraversal(node.right)
     }
 
+    
     preOrdertraversal(node = this.root) {
         if (node === null) {
             return
@@ -183,7 +183,6 @@ class BST {
 
         let closest = -Infinity;
         let current = node;
-
         while (current) {
             if (Math.abs(target - current.val) < Math.abs(target - closest)) {
                 closest = current.val
@@ -198,6 +197,23 @@ class BST {
             }
         }
         return closest
+    }
+
+    isBalanced() {
+        let root = this.root
+        function Height(node) {
+            if (!node) return 0
+
+            let left = Height(node.left)
+            let right = Height(node.right)
+
+            if (left === -1 || right === -1 || Math.abs(left - right) > 1) return -1
+
+            return Math.max(left, right) + 1
+
+        }
+
+        return Height(root) !== -1
     }
 
     deletion(val) {
@@ -224,22 +240,22 @@ class BST {
                 if (!node.left) {
                     return node.right
                 }
-                
+
                 let successor = minRight(node.right);
                 node.val = successor.val;
-                node.right  = remove(node.right,successor.val)
+                node.right = remove(node.right, successor.val)
             }
             return node
-            
+
         }
-        
-        let minRight = (node)=>{
+
+        let minRight = (node) => {
             while (node.left) {
                 node = node.left
             }
             return node
         }
-        
+
         return this.root = remove(this.root, val)
     }
 }
@@ -252,11 +268,11 @@ let root = new BST();
 root.insert(10)
 root.insert(5)
 root.insert(15)
-root.insert(12)
-root.insert(7)
-root.insert(8)
-root.insert(6);
-root.insert(0);
+// root.insert(12)
+// root.insert(7)
+// root.insert(8)
+// root.insert(6);
+// root.insert(0);
 console.log(root.root);
 
 console.log("-------------------------------------------------------| ");
@@ -303,6 +319,12 @@ console.log(root.closest(10));
 
 console.log("-------------------------------------------------------| ");
 
+console.log("--- Balanced ---")
+console.log(root.isBalanced());
+console.log(root.root);
+
+
+console.log("-------------------------------------------------------| ");
 console.log("--- Deletion ---")
 console.log(root.deletion(10));
 
